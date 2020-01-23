@@ -1,24 +1,22 @@
 :root {
-  --big-font: 'Shojumaru', cursive;
-  --small-font: 'Bubblegum Sans', cursive;
-  
+  --big-font: "Shojumaru", cursive;
+  --small-font: "Bubblegum Sans", cursive;
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: var(--big-font);
+  font-family: var(--small-font);
 }
 
 #round {
   height: 10vh;
+  font-family: var(--big-font);
 }
 
 #fighters {
   height: 80vh;
 }
-
-
 
 #buy {
   height: 10vh;
