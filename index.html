@@ -5,8 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
-
+    <script src="vue.js"></script>
     <title>Arcane</title>
   </head>
-  <body></body>
+  <body>
+    <main id="app">
+      <div class="player">
+        <div>
+          <span>Your health:</span>
+          <span>{{ user.health }}</span>
+        </div>
+        <div>
+          <span>Your shield:</span>
+          <span>{{ user.shield }}</span>
+        </div>
+        <div>
+          <span>Your energy:</span>
+          <span>{{ user.energy }}</span>
+        </div>
+      </div>
+      <div class="monster">
+        <div>
+          <span>Monster health:</span>
+          <span>{{ enemy.health }}</span>
+        </div>
+        <div>
+          <span>{{ enemyHealth }}</span>
+        </div>
+      </div>
+      <button @click="rstGame">Reset Game</button>
+      <button @click="playerAttack(user.attack)">Attack</button>
+    </main>
+    <script src="app.js"></script>
+  </body>
 </html>
