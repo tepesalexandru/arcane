@@ -45,16 +45,71 @@
       <button @click="playerAttack(user.attack)">Attack</button>
     </main> -->
     <div class="main w-full h-screen bg-gray-400">
-      <h1 id="round" class="text-6xl font-bold text-center">Fight!</h1>
+      <h1 id="fight" class="text-6xl font-bold text-center">Fight!</h1>
 
-      <div id="fighters" class="flex bg-red-400 w-full">
-        <div id="hero" class="w-1/2 h-full bg-red-500">
-          <div id="status" class="w-full bg-orange-500">Health</div>
+      <div id="rounds" class="flex">
+        <div id="round-h" class="w-1/2 h-full bg-red-300">Hero Round</div>
+        <div id="round-m" class="w-1/2 h-full bg-red-300">Monster Round</div>
+      </div>
+
+      <div id="fighters" class="flex flex-col md:flex-row bg-red-400 w-full">
+        <div id="hero" class="w-screen md:w-1/2 md:h-full bg-red-500">
+          <div id="status" class="w-full bg-orange-500">
+
+            <!-- Bars -->
+            
+            <div class="flex items-center max-w-md mx-auto text-red-700 font-bold">
+              Health
+              <div class="w-full h-6 p-1 mx-2 rounded-full bg-red-300">
+                <div class="w-1/2 h-full bg-red-500 rounded-full"></div>
+              </div>
+            </div>
+            <div class="flex items-center max-w-md mx-auto text-yellow-700 font-bold">
+              Shield
+              <div class="w-full h-6 p-1 mx-2 rounded-full bg-yellow-300">
+                <div class="w-1/2 h-full bg-yellow-500 rounded-full"></div>
+              </div>
+            </div>
+            <div class="flex items-center max-w-md mx-auto text-blue-700 font-bold">
+              Energy
+              <div class="w-full h-6 p-1 mx-2 rounded-full bg-blue-300">
+                <div class="w-1/2 h-full bg-blue-500 rounded-full"></div>
+              </div>
+            </div>
+
+            <!-- Bars -->
+            
+          </div>
           HERO
         </div>
 
-        <div id="monster" class="w-1/2 h-full bg-orange-900">
-          <div id="status" class="w-full bg-orange-800">Health</div>
+        <div id="monster" class="flex flex-col-reverse md:flex-col w-screen md:w-1/2 md:h-full bg-orange-900">
+          <div id="status" class="w-full bg-orange-500">
+            
+            <!-- Bars -->
+            
+            <div class="flex items-center max-w-md mx-auto text-red-700 font-bold">
+              Health
+              <div class="w-full h-6 p-1 mx-2 rounded-full bg-red-300">
+                <div class="w-1/2 h-full bg-red-500 rounded-full"></div>
+              </div>
+            </div>
+            <div class="flex items-center max-w-md mx-auto text-yellow-700 font-bold">
+              Shield
+              <div class="w-full h-6 p-1 mx-2 rounded-full bg-yellow-300">
+                <div class="w-1/2 h-full bg-yellow-500 rounded-full"></div>
+              </div>
+            </div>
+            <div class="flex items-center max-w-md mx-auto text-blue-700 font-bold">
+              Energy
+              <div class="w-full h-6 p-1 mx-2 rounded-full bg-blue-300">
+                <div class="w-1/2 h-full bg-blue-500 rounded-full"></div>
+              </div>
+            </div>
+
+            <!-- Bars -->
+
+          </div>
           MONSTER
         </div>
       </div>

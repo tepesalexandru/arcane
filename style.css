@@ -9,13 +9,21 @@
   font-family: var(--small-font);
 }
 
-#round {
-  height: 10vh;
+#fight {
+  height: 10%;
   font-family: var(--big-font);
 }
 
+#rounds {
+  height: 5vh;
+}
+
 #fighters {
-  height: 80vh;
+  height: 70vh;
+}
+
+#hero , #monster {
+  height: 50%;
 }
 
 #buy {
@@ -24,4 +32,10 @@
 
 #status {
   height: 20%;
+}
+
+@media screen and (min-width: 768px) {
+  #hero , #monster {
+    height: 100%;
+  }
 }
