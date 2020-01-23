@@ -4,9 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans|Shojumaru&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css"/>
 
     <title>Arcane</title>
   </head>
-  <body></body>
+  <body>
+
+    <div class="main w-full h-screen bg-gray-400">
+
+      <h1 id="round" class="text-6xl font-bold text-center">Fight!</h1>
+
+      <div id="fighters" class="flex bg-red-400 w-full">
+
+        <div id="hero" class="w-1/2 h-full bg-red-500">
+           <div id="status" class="w-full bg-orange-500">Health</div> 
+           HERO
+        </div>
+
+        <div id="monster" class="w-1/2 h-full bg-orange-900">
+          <div id="status" class="w-full bg-orange-800">Health</div> 
+          MONSTER
+        </div>
+
+      </div>
+
+      <div id="buy" class="w-full h-full bg-red-700">Buy</div>
+
+    </div>
+
+
+  </body>
 </html>
+
+git config --global user.email "xrishi20@gmail.com"
+  git config --global user.name "xrishi20"
