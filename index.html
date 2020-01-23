@@ -41,9 +41,15 @@
           <span>{{ enemyHealth }}</span>
         </div>
       </div>
-      <button v-if="!enemy.alive">Next Monster</button>
+      <button v-if="!enemy.alive" @click="loadNextRound()">Next Monster</button>
       <button @click="rstGame">Reset Game</button>
       <button @click="playerAttack(user.attack)">Attack</button>
+      <div>
+        <span>Wave: {{ game.wave }}</span>
+      </div>
+      <div>
+        <span>Round: {{ game.round }}</span>
+      </div>
     </main>
     <div class="main w-full h-screen bg-gray-400">
       <h1 id="round" class="text-6xl font-bold text-center">Fight!</h1>
