@@ -44,6 +44,7 @@
       <button v-if="!enemy.alive" @click="loadNextRound()">Next Monster</button>
       <button @click="rstGame">Reset Game</button>
       <button @click="playerAttack(user.attack)">Attack</button>
+      <button @click="enemyAttack(enemy.attack)">Enemy Attack</button>
       <div>
         <span>Wave: {{ game.wave }}</span>
       </div>
@@ -62,22 +63,27 @@
       <div id="fighters" class="flex flex-col md:flex-row bg-red-400 w-full">
         <div id="hero" class="w-screen md:w-1/2 md:h-full bg-red-500">
           <div id="status" class="w-full bg-orange-500">
-
             <!-- Bars -->
-            
-            <div class="flex items-center max-w-md mx-auto text-red-700 font-bold">
+
+            <div
+              class="flex items-center max-w-md mx-auto text-red-700 font-bold"
+            >
               Health
               <div class="w-full h-6 p-1 mx-2 rounded-full bg-red-300">
-                <div class="w-1/2 h-full bg-red-500 rounded-full"></div>
+                <div class="h-full bg-red-500 rounded-full hp"></div>
               </div>
             </div>
-            <div class="flex items-center max-w-md mx-auto text-yellow-700 font-bold">
+            <div
+              class="flex items-center max-w-md mx-auto text-yellow-700 font-bold"
+            >
               Shield
               <div class="w-full h-6 p-1 mx-2 rounded-full bg-yellow-300">
                 <div class="w-1/2 h-full bg-yellow-500 rounded-full"></div>
               </div>
             </div>
-            <div class="flex items-center max-w-md mx-auto text-blue-700 font-bold">
+            <div
+              class="flex items-center max-w-md mx-auto text-blue-700 font-bold"
+            >
               Energy
               <div class="w-full h-6 p-1 mx-2 rounded-full bg-blue-300">
                 <div class="w-1/2 h-full bg-blue-500 rounded-full"></div>
@@ -85,29 +91,36 @@
             </div>
 
             <!-- Bars -->
-            
           </div>
           HERO
         </div>
 
-        <div id="monster" class="flex flex-col-reverse md:flex-col w-screen md:w-1/2 md:h-full bg-orange-900">
+        <div
+          id="monster"
+          class="flex flex-col-reverse md:flex-col w-screen md:w-1/2 md:h-full bg-orange-900"
+        >
           <div id="status" class="w-full bg-orange-500">
-            
             <!-- Bars -->
-            
-            <div class="flex items-center max-w-md mx-auto text-red-700 font-bold">
+
+            <div
+              class="flex items-center max-w-md mx-auto text-red-700 font-bold"
+            >
               Health
               <div class="w-full h-6 p-1 mx-2 rounded-full bg-red-300">
-                <div class="w-1/2 h-full bg-red-500 rounded-full"></div>
+                <div class=" h-full bg-red-500 rounded-full hp-enemy"></div>
               </div>
             </div>
-            <div class="flex items-center max-w-md mx-auto text-yellow-700 font-bold">
+            <div
+              class="flex items-center max-w-md mx-auto text-yellow-700 font-bold"
+            >
               Shield
               <div class="w-full h-6 p-1 mx-2 rounded-full bg-yellow-300">
                 <div class="w-1/2 h-full bg-yellow-500 rounded-full"></div>
               </div>
             </div>
-            <div class="flex items-center max-w-md mx-auto text-blue-700 font-bold">
+            <div
+              class="flex items-center max-w-md mx-auto text-blue-700 font-bold"
+            >
               Energy
               <div class="w-full h-6 p-1 mx-2 rounded-full bg-blue-300">
                 <div class="w-1/2 h-full bg-blue-500 rounded-full"></div>
@@ -115,7 +128,6 @@
             </div>
 
             <!-- Bars -->
-
           </div>
           MONSTER
         </div>
@@ -123,6 +135,9 @@
 
       <div id="buy" class="w-full h-full bg-red-700">Buy</div>
     </div>
+    <script src="player.js"></script>
+    <script src="monster.js"></script>
+    <script src="Helper.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

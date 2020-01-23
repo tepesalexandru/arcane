@@ -5,25 +5,10 @@ let gameConfig = {
   round: 0
 };
 
-/// Player Object
+/// DOM Elements
 
-let player = {
-  health: 0,
-  energy: 0,
-  shield: 0,
-  attack: 10,
-  gold: 0,
-  alive: false
-};
-
-/// Monster
-
-let monster = {
-  health: 0,
-  shield: 0,
-  attack: 0,
-  alive: false
-};
+const __playerHP = document.querySelector(".hp");
+const __enemyHP = document.querySelector(".hp-enemy");
 
 new Vue({
   el: "#app",
@@ -38,36 +23,53 @@ new Vue({
     }
   },
   watch: {
+    user: {
+      handler(val) {
+        __playerHP.style.width = calculatePercentage(
+          this.user.health,
+          this.user.totalHealth
+        );
+      },
+      deep: true
+    },
     enemy: {
       handler(val) {
         if (this.enemy.health <= 0) this.enemy.alive = false;
         else this.enemy.alive = true;
+        __enemyHP.style.width = calculatePercentage(
+          this.enemy.health,
+          this.enemy.totalHealth
+        );
       },
       deep: true
     }
   },
   methods: {
     rstGame: function() {
-      /*player.health = 100;
-      monster.health = 80;
-      monster.alive = true;*/
+      this.rstPlayer();
+      this.rstEnemey();
     },
     rstPlayer: function() {
-      player.health = 100;
+      this.user.health = 100;
     },
     rstEnemey: function() {
-      monster.health = 80;
-      monster.alive = true;
+      this.enemy.health = 80;
+      this.enemy.alive = true;
     },
     playerAttack: function(amount) {
-      monster.health -= amount;
+      this.enemy.health -= amount;
+      //this.user.health -= amount;
+    },
+    enemyAttack: function(amount) {
+      this.user.health -= amount;
+      console.log("Player hit!");
     },
     loadNextRound: function(curRound) {
-      gameConfig.round++;
-      if (gameConfig.round >= 3) {
+      this.game.round++;
+      if (this.game.round >= 3) {
         this.rstEnemey();
-        gameConfig.round = 0;
-        gameConfig.wave++;
+        this.game.round = 0;
+        this.game.wave++;
       }
     }
   }
