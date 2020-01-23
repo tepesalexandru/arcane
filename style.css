@@ -1,7 +1,6 @@
 :root {
-  --big-font: 'Shojumaru', cursive;
-  --small-font: 'Bubblegum Sans', cursive;
-  
+  --big-font: "Shojumaru", cursive;
+  --small-font: "Bubblegum Sans", cursive;
 }
 
 * {
@@ -17,8 +16,6 @@
 #fighters {
   height: 80vh;
 }
-
-
 
 #buy {
   height: 10vh;
