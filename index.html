@@ -17,7 +17,7 @@
     <title>Arcane</title>
   </head>
   <body>
-    <!-- <main id="app">
+    <main id="app">
       <div class="player">
         <div>
           <span>Your health:</span>
@@ -41,9 +41,10 @@
           <span>{{ enemyHealth }}</span>
         </div>
       </div>
+      <button v-if="!enemy.alive">Next Monster</button>
       <button @click="rstGame">Reset Game</button>
       <button @click="playerAttack(user.attack)">Attack</button>
-    </main> -->
+    </main>
     <div class="main w-full h-screen bg-gray-400">
       <h1 id="round" class="text-6xl font-bold text-center">Fight!</h1>
 

@@ -13,7 +13,8 @@ let player = {
 let monster = {
   health: 0,
   shield: 0,
-  attack: 0
+  attack: 0,
+  alive: false
 };
 
 new Vue({
@@ -34,6 +35,7 @@ new Vue({
     rstGame: function() {
       player.health = 100;
       monster.health = 80;
+      monster.alive = true;
     },
     playerAttack: function(amount) {
       monster.health -= amount;
