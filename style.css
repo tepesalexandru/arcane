@@ -1,8 +1,7 @@
-
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   letter-spacing: 1px;
 }
 
@@ -10,6 +9,10 @@ body {
   background-image: url("./images/back.png");
   background-size: cover;
   background-position: center center;
+}
+
+.smooth-bar {
+  transition: all 180ms ease-in-out;
 }
 
 #wave-h #skew {
@@ -28,7 +31,8 @@ body {
   height: 70vh;
 }
 
-#hero , #monster {
+#hero,
+#monster {
   height: 50%;
 }
 
@@ -41,7 +45,8 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  #hero , #monster {
+  #hero,
+  #monster {
     height: 100%;
   }
 
@@ -52,5 +57,4 @@ body {
   #monster-a {
     transform: scaleX(-1);
   }
-  
 }

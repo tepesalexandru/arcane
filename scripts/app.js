@@ -23,26 +23,18 @@ new Vue({
   },
   watch: {
     user: {
-      handler(val) {
-        /*__playerHP.style.width = calculatePercentage(
-          this.user.health,
-          this.user.totalHealth
-        );
-        console.log("player values changed");*/
-      },
+      handler(val) {},
       deep: true
     },
     enemy: {
       handler(val) {
+        // Check if the enemy is dead
         if (this.enemy.health <= 0) {
           this.enemy.alive = false;
-          //this.loadNextRound();
+          this.rstEnemey();
+          this.loadNextRound();
           this.user.gold += this.enemy.reward;
         } else this.enemy.alive = true;
-        __enemyHP.style.width = calculatePercentage(
-          this.enemy.health,
-          this.enemy.totalHealth
-        );
       },
       deep: true
     }
@@ -63,7 +55,10 @@ new Vue({
       this.game = { ...initialConfig };
     },
     playerAttack: function(amount) {
-      this.enemy.health -= amount;
+      // Check if the player is alive
+      if (this.user.alive == true) {
+        this.enemy.health -= amount;
+      }
     },
     enemyAttack: function(amount) {
       this.user.health -= amount;
@@ -72,7 +67,6 @@ new Vue({
     loadNextRound: function(curRound) {
       this.game.round++;
       if (this.game.round >= 3) {
-        this.rstEnemey();
         this.game.round = 0;
         this.game.wave++;
       }
