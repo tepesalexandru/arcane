@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Bubblegum+Sans|Shojumaru&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
@@ -52,82 +49,289 @@
         <span>Round: {{ game.round }}</span>
       </div>
     </main>
-    <div class="main w-full h-screen bg-gray-400">
-      <h1 id="fight" class="text-6xl font-bold text-center">Fight!</h1>
 
-      <div id="rounds" class="flex">
-        <div id="round-h" class="w-1/2 h-full bg-red-300">Hero Round</div>
-        <div id="round-m" class="w-1/2 h-full bg-red-300">Monster Round</div>
+    <div class="main w-full h-screen">
+      <h1 id="rounds" class="text-4xl md:text-5xl text-center py-4">Round <span id="round">01</span></h1>
+
+      <!-- Waves -->
+
+      <div id="waves" class="flex">
+        <div id="wave-h" class="flex justify-end items-center w-1/2 h-full">
+
+          <div id="skew" class="w-6 h-3 bg-black p-1 mx-2">
+            <div class="w-full h-full bg-green-500"></div>
+          </div>
+          <div id="skew" class="w-6 h-3 bg-black p-1 mr-8">
+            <div class="w-full h-full bg-red-500"></div>
+          </div>
+
+        </div>
+        <div id="wave-m" class="flex items-center w-1/2 h-full">
+        
+          <div id="skew" class="w-6 h-3 bg-black p-1 ml-8">
+            <div class="w-full h-full bg-green-500"></div>
+          </div>
+          <div id="skew" class="w-6 h-3 bg-black p-1 mx-2">
+            <div class="w-full h-full bg-red-500"></div>
+          </div>
+
+        </div>
       </div>
 
+      <!-- Fight Zone -->
+
       <div id="fighters" class="flex flex-col md:flex-row bg-red-400 w-full">
+
+        <!-- Hero -->
+
         <div id="hero" class="w-screen md:w-1/2 md:h-full bg-red-500">
-          <div id="status" class="w-full bg-orange-500">
+          <div id="status" class="w-full px-8">
             <!-- Bars -->
 
-            <div
-              class="flex items-center max-w-md mx-auto text-red-700 font-bold"
-            >
-              Health
-              <div class="w-full h-6 p-1 mx-2 rounded-full bg-red-300">
-                <div class="h-full bg-red-500 rounded-full hp"></div>
-              </div>
-            </div>
-            <div
-              class="flex items-center max-w-md mx-auto text-yellow-700 font-bold"
-            >
-              Shield
-              <div class="w-full h-6 p-1 mx-2 rounded-full bg-yellow-300">
-                <div class="w-1/2 h-full bg-yellow-500 rounded-full"></div>
-              </div>
-            </div>
-            <div
-              class="flex items-center max-w-md mx-auto text-blue-700 font-bold"
-            >
-              Energy
-              <div class="w-full h-6 p-1 mx-2 rounded-full bg-blue-300">
-                <div class="w-1/2 h-full bg-blue-500 rounded-full"></div>
-              </div>
+            <!-- HP -->
+
+            <div class="flex items-center max-w-md mx-auto py-1">
+              
+                    <svg class="h-4 w-auto md:h-6" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M48.6 79C47.6433 79 46.721 78.6522 46.0022 78.0203C43.2874 75.6381 40.6701 73.3994 38.361 71.4246L38.3492 71.4143C31.579 65.6244 25.7328 60.6242 21.665 55.6986C17.1179 50.1922 15 44.9713 15 39.2677C15 33.7263 16.8934 28.6139 20.331 24.8718C23.8096 21.0854 28.5828 19 33.7729 19C37.6519 19 41.2044 20.2307 44.3313 22.6578C45.9094 23.8829 47.3398 25.3822 48.6 27.1311C49.8607 25.3822 51.2906 23.8829 52.8692 22.6578C55.9961 20.2307 59.5486 19 63.4277 19C68.6172 19 73.3909 21.0854 76.8695 24.8718C80.3071 28.6139 82.2 33.7263 82.2 39.2677C82.2 44.9713 80.0826 50.1922 75.5355 55.6981C71.4677 60.6242 65.622 65.6238 58.8529 71.4133C56.5396 73.3911 53.9182 75.6335 51.1973 78.0214C50.479 78.6522 49.5562 79 48.6 79Z" fill="#E53E3E"/>
+                      <path d="M52.4 79C53.3567 79 54.279 78.6522 54.9978 78.0203C57.7126 75.6381 60.3299 73.3994 62.639 71.4246L62.6508 71.4143C69.421 65.6244 75.2672 60.6242 79.335 55.6986C83.8821 50.1922 86 44.9713 86 39.2677C86 33.7263 84.1066 28.6139 80.669 24.8718C77.1904 21.0854 72.4172 19 67.2271 19C63.3481 19 59.7956 20.2307 56.6687 22.6578C55.0906 23.8829 53.6602 25.3822 52.4 27.1311C51.1393 25.3822 49.7094 23.8829 48.1308 22.6578C45.0039 20.2307 41.4514 19 37.5723 19C32.3828 19 27.6091 21.0854 24.1305 24.8718C20.6929 28.6139 18.8 33.7263 18.8 39.2677C18.8 44.9713 20.9174 50.1922 25.4645 55.6981C29.5323 60.6242 35.378 65.6238 42.1471 71.4133C44.4604 73.3911 47.0818 75.6335 49.8027 78.0214C50.521 78.6522 51.4438 79 52.4 79Z" fill="#E53E3E"/>
+                      <rect width="16" height="16" transform="matrix(-1 0 0 1 60 71)" fill="black"/>
+                      <rect width="16" height="16" transform="matrix(-1 0 0 1 60 19)" fill="black"/>
+                      <rect width="16" height="16" transform="matrix(-1 0 0 1 49 65)" fill="black"/>
+                      <rect width="16" height="16" transform="matrix(-1 0 0 1 25 33)" fill="black"/>
+                      <rect width="16" height="16" transform="matrix(-1 0 0 1 44 13)" fill="black"/>
+                      <rect width="16" height="16" transform="matrix(-1 0 0 1 28 19)" fill="black"/>
+                      <rect width="16" height="16" transform="matrix(-1 0 0 1 31 49)" fill="black"/>
+                      <rect width="16" height="16" transform="matrix(-1 0 0 1 41 60)" fill="black"/>
+                      <rect x="41" y="71" width="16" height="16" fill="black"/>
+                      <rect x="41" y="19" width="16" height="16" fill="black"/>
+                      <rect x="52" y="65" width="16" height="16" fill="black"/>
+                      <rect x="76" y="33" width="16" height="16" fill="black"/>
+                      <rect x="57" y="13" width="16" height="16" fill="black"/>
+                      <rect x="73" y="19" width="16" height="16" fill="black"/>
+                      <rect x="70" y="49" width="16" height="16" fill="black"/>
+                      <rect x="60" y="60" width="16" height="16" fill="black"/>
+                      </svg>
+                      
+                      
+                    
+                    
+                  <div class="w-full h-4 md:h-6 p-1 mx-2 rounded-full bg-red-300">
+                    <div class="h-full bg-red-500 rounded-full hp"></div>
+                  </div>
+
             </div>
 
-            <!-- Bars -->
+            <!-- Shield -->
+
+            <div
+              class="flex items-center max-w-md mx-auto"
+            >
+                    <svg class="h-4 w-auto md:h-6" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M68.8021 18.4412H50.2392H31.6763C31.6763 24.5487 26.7252 29.4999 20.6176 29.4999V41.0278C20.6176 60.0485 32.4243 77.071 50.2392 83.7353C68.0541 77.071 79.8608 60.0485 79.8608 41.028V29.4999C73.7533 29.4999 68.8021 24.5487 68.8021 18.4412Z" fill="#F6E05E"/>
+                      <path d="M68.8021 18.4412H50.2392C50.2392 18.4412 50.2392 25.8412 50.2392 36.2882C50.2392 46.7353 50.2392 41.028 50.2392 47.6059L50.2392 57.1824C50.2392 76.203 50.2392 71.9824 50.2392 83.7353C68.0541 77.0709 79.8608 60.0485 79.8608 41.028V29.4999C73.7533 29.4999 68.8021 24.5487 68.8021 18.4412Z" fill="#ECC94B"/>
+                      <rect x="24.9706" y="13" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="35.8529" y="13" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="39.1176" y="13" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="24.9706" y="18.4412" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="20.6176" y="23.8824" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="13" y="29.3235" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="13" y="34.7647" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="13" y="42.3824" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="15.1765" y="47.8235" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="19.5294" y="55.4412" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="26.0588" y="65.2353" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="31.5" y="70.6765" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="36.9412" y="76.1176" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="42.3824" y="76.1176" width="10.8824" height="10.8824" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 75.0294 13)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 64.1471 13)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 60.8824 13)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 75.0294 18.4412)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 79.3824 23.8824)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 87 29.3235)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 87 34.7647)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 87 42.3824)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 84.8235 47.8235)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 80.4706 55.4412)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 73.9412 65.2353)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 68.5 70.6765)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 63.0588 76.1176)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 57.6176 76.1176)" fill="black"/>
+                      </svg>
+                      
+                  
+                      <div class="w-full h-4 md:h-6 p-1 mx-2 rounded-full bg-yellow-200">
+                        <div class="w-1/2 h-full bg-yellow-400 rounded-full"></div>
+                      </div>
+            </div>
+
+            <!-- Energy -->
+
+            <div
+              class="flex items-center max-w-md mx-auto py-1"
+            >
+                      <svg class="h-4 w-auto md:h-6" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M29.8576 81.6596C30.3063 82.0281 30.836 82.2528 31.3838 82.3298C32.0826 82.4281 32.811 82.2855 33.4397 81.8941L67.183 60.8675C67.882 60.432 68.3812 59.7217 68.5528 58.9188C68.7243 58.1158 68.5591 57.2639 68.0988 56.5814L59.055 43.1677L67.9486 22.5065C68.482 21.2678 68.1457 19.8488 67.1122 18.9754C66.0784 18.1021 64.617 18.0023 63.4752 18.7268L32.0923 38.6474C30.7506 39.4989 30.2886 41.2609 31.0401 42.6593L37.827 55.2784L28.9451 78.2046C28.4698 79.4324 28.8362 80.8208 29.8576 81.6596Z" fill="#63B3ED"/>
+                        <rect x="65.0031" y="13.9092" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="33.1824" y="29.3649" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="39.5466" y="25.7283" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="45.9107" y="22.0916" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="52.2748" y="18.455" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="56.8206" y="13" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="58.6389" y="30.2741" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="63.1848" y="23.0008" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="26.8183" y="75.7321" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="63.1848" y="53.9122" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="59.5481" y="59.3672" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="52.2748" y="63.0039" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="46.8199" y="66.6405" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="41.3649" y="70.2771" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="35.9099" y="74.823" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="26.8183" y="35.729" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="33.1824" y="50.2756" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="31.3641" y="57.5489" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="28.6367" y="63.913" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="25.9091" y="70.2771" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="54.0931" y="38.4565" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="59.5481" y="44.8206" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="30.455" y="43.0023" width="9.09161" height="9.09161" fill="black"/>
+                        </svg>
+                        
+                        
+                  
+                      <div class="w-full h-4 md:h-6 p-1 mx-2 rounded-full bg-blue-200">
+                        <div class="w-1/2 h-full bg-blue-400 rounded-full"></div>
+                      </div>
+            </div>
           </div>
           HERO
         </div>
+
+        <!-- Monster -->
 
         <div
           id="monster"
           class="flex flex-col-reverse md:flex-col w-screen md:w-1/2 md:h-full bg-orange-900"
         >
-          <div id="status" class="w-full bg-orange-500">
+          <div id="status" class="w-full px-8">
             <!-- Bars -->
+<!-- HP -->
+
+            <div class="flex items-center max-w-md mx-auto py-1">
+              
+                    <svg class="h-4 w-auto md:h-6" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M48.6 79C47.6433 79 46.721 78.6522 46.0022 78.0203C43.2874 75.6381 40.6701 73.3994 38.361 71.4246L38.3492 71.4143C31.579 65.6244 25.7328 60.6242 21.665 55.6986C17.1179 50.1922 15 44.9713 15 39.2677C15 33.7263 16.8934 28.6139 20.331 24.8718C23.8096 21.0854 28.5828 19 33.7729 19C37.6519 19 41.2044 20.2307 44.3313 22.6578C45.9094 23.8829 47.3398 25.3822 48.6 27.1311C49.8607 25.3822 51.2906 23.8829 52.8692 22.6578C55.9961 20.2307 59.5486 19 63.4277 19C68.6172 19 73.3909 21.0854 76.8695 24.8718C80.3071 28.6139 82.2 33.7263 82.2 39.2677C82.2 44.9713 80.0826 50.1922 75.5355 55.6981C71.4677 60.6242 65.622 65.6238 58.8529 71.4133C56.5396 73.3911 53.9182 75.6335 51.1973 78.0214C50.479 78.6522 49.5562 79 48.6 79Z" fill="#E53E3E"/>
+                      <path d="M52.4 79C53.3567 79 54.279 78.6522 54.9978 78.0203C57.7126 75.6381 60.3299 73.3994 62.639 71.4246L62.6508 71.4143C69.421 65.6244 75.2672 60.6242 79.335 55.6986C83.8821 50.1922 86 44.9713 86 39.2677C86 33.7263 84.1066 28.6139 80.669 24.8718C77.1904 21.0854 72.4172 19 67.2271 19C63.3481 19 59.7956 20.2307 56.6687 22.6578C55.0906 23.8829 53.6602 25.3822 52.4 27.1311C51.1393 25.3822 49.7094 23.8829 48.1308 22.6578C45.0039 20.2307 41.4514 19 37.5723 19C32.3828 19 27.6091 21.0854 24.1305 24.8718C20.6929 28.6139 18.8 33.7263 18.8 39.2677C18.8 44.9713 20.9174 50.1922 25.4645 55.6981C29.5323 60.6242 35.378 65.6238 42.1471 71.4133C44.4604 73.3911 47.0818 75.6335 49.8027 78.0214C50.521 78.6522 51.4438 79 52.4 79Z" fill="#E53E3E"/>
+                      <rect width="16" height="16" transform="matrix(-1 0 0 1 60 71)" fill="black"/>
+                      <rect width="16" height="16" transform="matrix(-1 0 0 1 60 19)" fill="black"/>
+                      <rect width="16" height="16" transform="matrix(-1 0 0 1 49 65)" fill="black"/>
+                      <rect width="16" height="16" transform="matrix(-1 0 0 1 25 33)" fill="black"/>
+                      <rect width="16" height="16" transform="matrix(-1 0 0 1 44 13)" fill="black"/>
+                      <rect width="16" height="16" transform="matrix(-1 0 0 1 28 19)" fill="black"/>
+                      <rect width="16" height="16" transform="matrix(-1 0 0 1 31 49)" fill="black"/>
+                      <rect width="16" height="16" transform="matrix(-1 0 0 1 41 60)" fill="black"/>
+                      <rect x="41" y="71" width="16" height="16" fill="black"/>
+                      <rect x="41" y="19" width="16" height="16" fill="black"/>
+                      <rect x="52" y="65" width="16" height="16" fill="black"/>
+                      <rect x="76" y="33" width="16" height="16" fill="black"/>
+                      <rect x="57" y="13" width="16" height="16" fill="black"/>
+                      <rect x="73" y="19" width="16" height="16" fill="black"/>
+                      <rect x="70" y="49" width="16" height="16" fill="black"/>
+                      <rect x="60" y="60" width="16" height="16" fill="black"/>
+                      </svg>
+                      
+                      
+                    
+                    
+                  <div class="w-full h-4 md:h-6 p-1 mx-2 rounded-full bg-red-300">
+                    <div class="h-full bg-red-500 rounded-full hp"></div>
+                  </div>
+
+            </div>
+
+            <!-- Shield -->
 
             <div
-              class="flex items-center max-w-md mx-auto text-red-700 font-bold"
+              class="flex items-center max-w-md mx-auto"
             >
-              Health
-              <div class="w-full h-6 p-1 mx-2 rounded-full bg-red-300">
-                <div class=" h-full bg-red-500 rounded-full hp-enemy"></div>
-              </div>
-            </div>
-            <div
-              class="flex items-center max-w-md mx-auto text-yellow-700 font-bold"
-            >
-              Shield
-              <div class="w-full h-6 p-1 mx-2 rounded-full bg-yellow-300">
-                <div class="w-1/2 h-full bg-yellow-500 rounded-full"></div>
-              </div>
-            </div>
-            <div
-              class="flex items-center max-w-md mx-auto text-blue-700 font-bold"
-            >
-              Energy
-              <div class="w-full h-6 p-1 mx-2 rounded-full bg-blue-300">
-                <div class="w-1/2 h-full bg-blue-500 rounded-full"></div>
-              </div>
+                    <svg class="h-4 w-auto md:h-6" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M68.8021 18.4412H50.2392H31.6763C31.6763 24.5487 26.7252 29.4999 20.6176 29.4999V41.0278C20.6176 60.0485 32.4243 77.071 50.2392 83.7353C68.0541 77.071 79.8608 60.0485 79.8608 41.028V29.4999C73.7533 29.4999 68.8021 24.5487 68.8021 18.4412Z" fill="#F6E05E"/>
+                      <path d="M68.8021 18.4412H50.2392C50.2392 18.4412 50.2392 25.8412 50.2392 36.2882C50.2392 46.7353 50.2392 41.028 50.2392 47.6059L50.2392 57.1824C50.2392 76.203 50.2392 71.9824 50.2392 83.7353C68.0541 77.0709 79.8608 60.0485 79.8608 41.028V29.4999C73.7533 29.4999 68.8021 24.5487 68.8021 18.4412Z" fill="#ECC94B"/>
+                      <rect x="24.9706" y="13" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="35.8529" y="13" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="39.1176" y="13" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="24.9706" y="18.4412" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="20.6176" y="23.8824" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="13" y="29.3235" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="13" y="34.7647" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="13" y="42.3824" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="15.1765" y="47.8235" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="19.5294" y="55.4412" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="26.0588" y="65.2353" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="31.5" y="70.6765" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="36.9412" y="76.1176" width="10.8824" height="10.8824" fill="black"/>
+                      <rect x="42.3824" y="76.1176" width="10.8824" height="10.8824" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 75.0294 13)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 64.1471 13)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 60.8824 13)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 75.0294 18.4412)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 79.3824 23.8824)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 87 29.3235)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 87 34.7647)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 87 42.3824)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 84.8235 47.8235)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 80.4706 55.4412)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 73.9412 65.2353)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 68.5 70.6765)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 63.0588 76.1176)" fill="black"/>
+                      <rect width="10.8824" height="10.8824" transform="matrix(-1 0 0 1 57.6176 76.1176)" fill="black"/>
+                      </svg>
+                      
+                  
+                      <div class="w-full h-4 md:h-6 p-1 mx-2 rounded-full bg-yellow-200">
+                        <div class="w-1/2 h-full bg-yellow-400 rounded-full"></div>
+                      </div>
             </div>
 
-            <!-- Bars -->
+            <!-- Energy -->
+
+            <div
+              class="flex items-center max-w-md mx-auto py-1"
+            >
+                      <svg class="h-4 w-auto md:h-6" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M29.8576 81.6596C30.3063 82.0281 30.836 82.2528 31.3838 82.3298C32.0826 82.4281 32.811 82.2855 33.4397 81.8941L67.183 60.8675C67.882 60.432 68.3812 59.7217 68.5528 58.9188C68.7243 58.1158 68.5591 57.2639 68.0988 56.5814L59.055 43.1677L67.9486 22.5065C68.482 21.2678 68.1457 19.8488 67.1122 18.9754C66.0784 18.1021 64.617 18.0023 63.4752 18.7268L32.0923 38.6474C30.7506 39.4989 30.2886 41.2609 31.0401 42.6593L37.827 55.2784L28.9451 78.2046C28.4698 79.4324 28.8362 80.8208 29.8576 81.6596Z" fill="#63B3ED"/>
+                        <rect x="65.0031" y="13.9092" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="33.1824" y="29.3649" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="39.5466" y="25.7283" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="45.9107" y="22.0916" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="52.2748" y="18.455" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="56.8206" y="13" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="58.6389" y="30.2741" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="63.1848" y="23.0008" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="26.8183" y="75.7321" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="63.1848" y="53.9122" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="59.5481" y="59.3672" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="52.2748" y="63.0039" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="46.8199" y="66.6405" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="41.3649" y="70.2771" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="35.9099" y="74.823" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="26.8183" y="35.729" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="33.1824" y="50.2756" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="31.3641" y="57.5489" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="28.6367" y="63.913" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="25.9091" y="70.2771" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="54.0931" y="38.4565" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="59.5481" y="44.8206" width="9.09161" height="9.09161" fill="black"/>
+                        <rect x="30.455" y="43.0023" width="9.09161" height="9.09161" fill="black"/>
+                        </svg>
+                        
+                        
+                  
+                      <div class="w-full h-4 md:h-6 p-1 mx-2 rounded-full bg-blue-200">
+                        <div class="w-1/2 h-full bg-blue-400 rounded-full"></div>
+                      </div>
+            </div>
           </div>
           MONSTER
         </div>

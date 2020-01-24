@@ -1,21 +1,27 @@
-:root {
-  --big-font: "Shojumaru", cursive;
-  --small-font: "Bubblegum Sans", cursive;
-}
 
 * {
   margin: 0;
   padding: 0;
-  font-family: var(--small-font);
+  font-family: 'Press Start 2P', cursive;
+  letter-spacing: 1px;
 }
 
-#fight {
-  height: 10%;
-  font-family: var(--big-font);
+body {
+  background-image: url("./images/bamboo.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-#rounds {
-  height: 5vh;
+#wave-h #skew {
+  transform: skewX(20deg);
+}
+
+#wave-m #skew {
+  transform: skewX(-20deg);
+}
+
+#waves {
+  height: 3vh;
 }
 
 #fighters {
@@ -27,11 +33,7 @@
 }
 
 #buy {
-  height: 10vh;
-}
-
-#status {
-  height: 20%;
+  height: 15vh;
 }
 
 @media screen and (min-width: 768px) {
