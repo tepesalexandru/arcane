@@ -16,6 +16,7 @@
     <script src="vue.js"></script>
     <title>Arcane</title>
   </head>
+
   <body>
     <main id="app" style="color:white; background-color: blue">
       <div class="player">
@@ -97,7 +98,10 @@
                 <img src="./svg/heart.svg" alt="" class="h-4 w-auto md:h-6" />
 
                 <div class="w-full h-4 md:h-6 p-1 mx-2 rounded-full bg-red-300">
-                  <div class="h-full bg-red-500 rounded-full hp"></div>
+                  <div
+                    class="h-full bg-red-500 rounded-full hp"
+                    :style="{width: playerHP}"
+                  ></div>
                 </div>
               </div>
 
@@ -141,7 +145,10 @@
               <div class="flex items-center max-w-md mx-auto py-1">
                 <img src="./svg/heart.svg" alt="" class="h-4 w-auto md:h-6" />
                 <div class="w-full h-4 md:h-6 p-1 mx-2 rounded-full bg-red-300">
-                  <div class="h-full bg-red-500 rounded-full hp"></div>
+                  <div
+                    class="h-full bg-red-500 rounded-full hp-enemy"
+                    :style="{width: enemyHP}"
+                  ></div>
                 </div>
               </div>
 

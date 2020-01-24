@@ -13,15 +13,22 @@ new Vue({
   computed: {
     enemyHealth: function() {
       return this.enemy.health > 0 ? "Monster Alive" : "Monster Defeated";
+    },
+    enemyHP: function() {
+      return calculatePercentage(this.enemy.health, this.enemy.totalHealth);
+    },
+    playerHP: function() {
+      return calculatePercentage(this.user.health, this.user.totalHealth);
     }
   },
   watch: {
     user: {
       handler(val) {
-        __playerHP.style.width = calculatePercentage(
+        /*__playerHP.style.width = calculatePercentage(
           this.user.health,
           this.user.totalHealth
         );
+        console.log("player values changed");*/
       },
       deep: true
     },
@@ -29,7 +36,7 @@ new Vue({
       handler(val) {
         if (this.enemy.health <= 0) {
           this.enemy.alive = false;
-          this.loadNextRound();
+          //this.loadNextRound();
           this.user.gold += this.enemy.reward;
         } else this.enemy.alive = true;
         __enemyHP.style.width = calculatePercentage(
