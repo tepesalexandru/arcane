@@ -17,7 +17,7 @@
     <title>Arcane</title>
   </head>
 
-  <body class="p-6">
+  <body class="p-3">
     <main id="app">
       <div class="player">
         <div>
@@ -67,20 +67,20 @@
 
         <!-- Waves -->
 
-        <div id="waves" class="flex">
+        <div id="waves" class="flex mb-3">
           <div id="wave-h" class="flex justify-end items-center w-1/2 h-full">
-            <div id="skew" class="w-6 h-3 bg-black p-1 mx-2">
+            <div id="skew" class="w-6 h-3 md:w-8 md:h-4 bg-black p-1 mx-2">
               <div class="w-full h-full bg-green-500"></div>
             </div>
-            <div id="skew" class="w-6 h-3 bg-black p-1 mr-8">
+            <div id="skew" class="w-6 h-3 md:w-8 md:h-4 bg-black p-1 mr-8">
               <div class="w-full h-full bg-red-500"></div>
             </div>
           </div>
           <div id="wave-m" class="flex items-center w-1/2 h-full">
-            <div id="skew" class="w-6 h-3 bg-black p-1 ml-8">
+            <div id="skew" class="w-6 h-3 md:w-8 md:h-4 bg-black p-1 ml-8">
               <div class="w-full h-full bg-green-500"></div>
             </div>
-            <div id="skew" class="w-6 h-3 bg-black p-1 mx-2">
+            <div id="skew" class="w-6 h-3 md:w-8 md:h-4 bg-black p-1 mx-2">
               <div class="w-full h-full bg-red-500"></div>
             </div>
           </div>
@@ -93,14 +93,14 @@
 
           <div
             id="hero"
-            class="flex flex-col-reverse md:flex-col w-screen md:w-1/2 md:h-full"
+            class="flex flex-col-reverse md:flex-col w-full md:w-1/2 md:h-full"
           >
-            <div id="status" class="w-full px-8">
+            <div id="status" class="w-full pl-48 md:pl-0">
               <!-- Bars -->
 
               <!-- HP -->
 
-              <div class="flex items-center max-w-md mx-auto py-1">
+              <div class="flex flex-row-reverse md:flex-row items-center max-w-sm mx-auto py-1">
                 <img src="./svg/heart.svg" alt="" class="h-4 w-auto md:h-6" />
 
                 <div class="w-full h-4 md:h-6 p-1 mx-2 rounded-full bg-red-300">
@@ -113,7 +113,7 @@
 
               <!-- Shield -->
 
-              <div class="flex items-center max-w-md mx-auto">
+              <div class="flex flex-row-reverse md:flex-row items-center max-w-sm mx-auto">
                 <img src="./svg/shield.svg" alt="" class="h-4 w-auto md:h-6" />
 
                 <div
@@ -125,7 +125,7 @@
 
               <!-- Energy -->
 
-              <div class="flex items-center max-w-md mx-auto py-1">
+              <div class="flex flex-row-reverse md:flex-row items-center max-w-sm mx-auto py-1">
                 <img src="./svg/energy.svg" alt="" class="h-4 w-auto md:h-6" />
 
                 <div
@@ -136,10 +136,10 @@
               </div>
             </div>
 
-            <div class="w-full h-full relative">
+            <div class="w-full h-full p-4 flex flex-row-reverse md:justify-center">
               <img
-                id="hero-a"
-                class="absolute right-0 bottom-0 md:left-0 md:top-0 w-1/3"
+                id="avatar"
+                class="w-1/2"
                 src="./images/hero.png"
                 alt=""
               />
@@ -148,12 +148,12 @@
 
           <!-- Monster -->
 
-          <div id="monster" class="flex flex-col w-screen md:w-1/2 md:h-full">
-            <div id="status" class="w-full px-8">
+          <div id="monster" class="flex flex-col w-full md:w-1/2 md:h-full">
+            <div id="status" class="w-full pr-48 md:pr-0">
               <!-- Bars -->
               <!-- HP -->
 
-              <div class="flex items-center max-w-md mx-auto py-1">
+              <div class="flex items-center max-w-sm mx-auto py-1">
                 <img src="./svg/heart.svg" alt="" class="h-4 w-auto md:h-6" />
                 <div class="w-full h-4 md:h-6 p-1 mx-2 rounded-full bg-red-300">
                   <div
@@ -165,7 +165,7 @@
 
               <!-- Shield -->
 
-              <div class="flex items-center max-w-md mx-auto">
+              <div class="flex items-center max-w-sm mx-auto">
                 <img src="./svg/shield.svg" alt="" class="h-4 w-auto md:h-6" />
                 <div
                   class="w-full h-4 md:h-6 p-1 mx-2 rounded-full bg-yellow-200"
@@ -176,7 +176,7 @@
 
               <!-- Energy -->
 
-              <div class="flex items-center max-w-md mx-auto py-1">
+              <div class="flex items-center max-w-sm mx-auto py-1">
                 <img src="./svg/energy.svg" alt="" class="h-4 w-auto md:h-6" />
                 <div
                   class="w-full h-4 md:h-6 p-1 mx-2 rounded-full bg-blue-200"
@@ -186,18 +186,23 @@
               </div>
             </div>
 
-            <div class="w-full h-full relative">
+            <div class="w-full h-full p-4 flex md:justify-center">
               <img
-                id="monster-a"
-                class="absolute left-0 top-0 md:right-0 md:bottom-0 w-1/2"
-                src="./images/Monster.png"
+                id="avatar"
+                class="w-1/2"
+                src="./images/monster.png"
                 alt=""
               />
             </div>
           </div>
         </div>
 
-        <div id="buy" class="w-full bg-red-700">Buy</div>
+        <div id="buy" class="flex flex-wrap justify-center items-center w-full my-4">
+          <button @click="loadNextRound()" class="m-1 px-2 py-1 text-white rounded border border-white">Next Monster</button>
+          <button @click="rstGame" class="m-1 px-2 py-1 text-white rounded border border-white">Reset Game</button>
+          <button @click="playerAttack(user.attack)" class="m-1 px-2 py-1 text-white rounded border border-white">Attack</button>
+          <button @click="enemyAttack(enemy.attack)" class="m-1 px-2 py-1 text-white rounded border border-white">Enemy Attack</button> 
+        </div>
       </div>
     </main>
     <script src="./scripts/config.js"></script>

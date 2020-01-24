@@ -3,12 +3,16 @@
   padding: 0;
   font-family: "Press Start 2P", cursive;
   letter-spacing: 1px;
+  -webkit-text-stroke: 1px black;
 }
 
 body {
   background-image: url("./images/back.png");
   background-size: cover;
-  background-position: center center;
+}
+
+#rounds {
+  -webkit-text-stroke: 3px black;
 }
 
 .smooth-bar {
@@ -28,7 +32,7 @@ body {
 }
 
 #fighters {
-  height: 70vh;
+  height: 65vh;
 }
 
 #hero,
@@ -36,12 +40,25 @@ body {
   height: 50%;
 }
 
-#hero-a {
-  transform: scaleX(-1);
+#hero #avatar {
+  animation: avatar 1.5s infinite ease;
 }
 
-#monster-a {
-  transform: scaleX(1);
+#monster #avatar {
+  animation: avatar 1.5s infinite 1s ease;
+}
+
+@keyframes avatar {
+
+  0% {
+    transform: scaleX(1) translateY(0);
+  }
+  50% {
+    transform: scaleX(1) translateY(1em);
+  }
+  100% {
+    transform: scaleX(1) translateY(0);
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -50,11 +67,16 @@ body {
     height: 100%;
   }
 
-  #hero-a {
-    transform: scaleX(1);
-  }
+  @keyframes avatar {
 
-  #monster-a {
-    transform: scaleX(-1);
+    0% {
+      transform: scaleX(-1) translateY(0);
+    }
+    50% {
+      transform: scaleX(-1) translateY(1em);
+    }
+    100% {
+      transform: scaleX(-1) translateY(0);
+    }
   }
 }
