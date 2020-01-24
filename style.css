@@ -7,9 +7,9 @@
 }
 
 body {
-  background-image: url("./images/bamboo.jpg");
+  background-image: url("./images/back.png");
   background-size: cover;
-  background-position: center;
+  background-position: center center;
 }
 
 #wave-h #skew {
@@ -32,12 +32,25 @@ body {
   height: 50%;
 }
 
-#buy {
-  height: 15vh;
+#hero-a {
+  transform: scaleX(-1);
+}
+
+#monster-a {
+  transform: scaleX(1);
 }
 
 @media screen and (min-width: 768px) {
   #hero , #monster {
     height: 100%;
   }
+
+  #hero-a {
+    transform: scaleX(1);
+  }
+
+  #monster-a {
+    transform: scaleX(-1);
+  }
+  
 }
