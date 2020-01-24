@@ -58,8 +58,11 @@
       </div>
 
       <div class="main w-full h-screen">
-        <h1 id="rounds" class="text-4xl md:text-5xl text-white text-center py-2">
-          Round <span id="round">01</span>
+        <h1
+          id="rounds"
+          class="text-4xl md:text-5xl text-white text-center py-2"
+        >
+          Round <span id="round">{{ game.round }}</span>
         </h1>
 
         <!-- Waves -->
@@ -88,7 +91,10 @@
         <div id="fighters" class="flex flex-col-reverse md:flex-row w-full">
           <!-- Hero -->
 
-          <div id="hero" class="flex flex-col-reverse md:flex-col w-screen md:w-1/2 md:h-full">
+          <div
+            id="hero"
+            class="flex flex-col-reverse md:flex-col w-screen md:w-1/2 md:h-full"
+          >
             <div id="status" class="w-full px-8">
               <!-- Bars -->
 
@@ -131,16 +137,18 @@
             </div>
 
             <div class="w-full h-full relative">
-              <img id="hero-a" class="absolute right-0 bottom-0 md:left-0 md:top-0 w-1/3" src="./images/hero.png" alt="">
+              <img
+                id="hero-a"
+                class="absolute right-0 bottom-0 md:left-0 md:top-0 w-1/3"
+                src="./images/hero.png"
+                alt=""
+              />
             </div>
           </div>
 
           <!-- Monster -->
 
-          <div
-            id="monster"
-            class="flex flex-col w-screen md:w-1/2 md:h-full"
-          >
+          <div id="monster" class="flex flex-col w-screen md:w-1/2 md:h-full">
             <div id="status" class="w-full px-8">
               <!-- Bars -->
               <!-- HP -->
@@ -177,10 +185,14 @@
                 </div>
               </div>
             </div>
-            
-            
+
             <div class="w-full h-full relative">
-              <img id="monster-a" class="absolute left-0 top-0 md:right-0 md:bottom-0 w-1/2" src="./images/Monster.png" alt="">
+              <img
+                id="monster-a"
+                class="absolute left-0 top-0 md:right-0 md:bottom-0 w-1/2"
+                src="./images/Monster.png"
+                alt=""
+              />
             </div>
           </div>
         </div>
@@ -188,10 +200,10 @@
         <div id="buy" class="w-full bg-red-700">Buy</div>
       </div>
     </main>
-    <script src="config.js"></script>
-    <script src="player.js"></script>
-    <script src="monster.js"></script>
-    <script src="Helper.js"></script>
-    <script src="app.js"></script>
+    <script src="./scripts/config.js"></script>
+    <script src="./scripts/player.js"></script>
+    <script src="./scripts/monster.js"></script>
+    <script src="./scripts/Helper.js"></script>
+    <script src="./scripts/app.js"></script>
   </body>
 </html>
