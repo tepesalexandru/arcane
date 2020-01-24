@@ -11,3 +11,15 @@ let player = {
   gold: 0,
   alive: false
 };
+
+const initialPlayer = {
+  health: 100,
+  totalHealth: 100,
+  energy: 30,
+  totalEnergy: 30,
+  shield: 50,
+  toatalShield: 50,
+  attack: 10,
+  gold: 0,
+  alive: true
+};

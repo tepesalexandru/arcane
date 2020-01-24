@@ -31,6 +31,10 @@
           <span>Your energy:</span>
           <span>{{ user.energy }}</span>
         </div>
+        <div>
+          <span>Your gold:</span>
+          <span>{{ user.gold }}</span>
+        </div>
       </div>
       <div class="monster">
         <div>
@@ -41,7 +45,7 @@
           <span>{{ enemyHealth }}</span>
         </div>
       </div>
-      <button v-if="!enemy.alive" @click="loadNextRound()">Next Monster</button>
+      <button @click="loadNextRound()">Next Monster</button>
       <button @click="rstGame">Reset Game</button>
       <button @click="playerAttack(user.attack)">Attack</button>
       <button @click="enemyAttack(enemy.attack)">Enemy Attack</button>
@@ -135,6 +139,7 @@
 
       <div id="buy" class="w-full h-full bg-red-700">Buy</div>
     </div>
+    <script src="config.js"></script>
     <script src="player.js"></script>
     <script src="monster.js"></script>
     <script src="Helper.js"></script>

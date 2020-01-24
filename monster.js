@@ -6,5 +6,16 @@ let monster = {
   shield: 0,
   totalShield: 0,
   attack: 20,
+  reward: 0,
   alive: false
+};
+
+const initialMonster = {
+  health: 100,
+  totalHealth: 100,
+  shield: 0,
+  totalShield: 100,
+  attack: 20,
+  reward: 5,
+  alive: true
 };

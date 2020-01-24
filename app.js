@@ -1,10 +1,3 @@
-/// Game Object
-
-let gameConfig = {
-  wave: 0,
-  round: 0
-};
-
 /// DOM Elements
 
 const __playerHP = document.querySelector(".hp");
@@ -34,8 +27,11 @@ new Vue({
     },
     enemy: {
       handler(val) {
-        if (this.enemy.health <= 0) this.enemy.alive = false;
-        else this.enemy.alive = true;
+        if (this.enemy.health <= 0) {
+          this.enemy.alive = false;
+          this.loadNextRound();
+          this.user.gold += this.enemy.reward;
+        } else this.enemy.alive = true;
         __enemyHP.style.width = calculatePercentage(
           this.enemy.health,
           this.enemy.totalHealth
@@ -48,17 +44,19 @@ new Vue({
     rstGame: function() {
       this.rstPlayer();
       this.rstEnemey();
+      this.rstConfig();
     },
     rstPlayer: function() {
-      this.user.health = 100;
+      this.user = { ...initialPlayer };
     },
     rstEnemey: function() {
-      this.enemy.health = 80;
-      this.enemy.alive = true;
+      this.enemy = { ...initialMonster };
+    },
+    rstConfig: function() {
+      this.game = { ...initialConfig };
     },
     playerAttack: function(amount) {
       this.enemy.health -= amount;
-      //this.user.health -= amount;
     },
     enemyAttack: function(amount) {
       this.user.health -= amount;
