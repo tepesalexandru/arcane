@@ -70,18 +70,30 @@
         <div id="waves" class="flex mb-3">
           <div id="wave-h" class="flex justify-end items-center w-1/2 h-full">
             <div id="skew" class="w-6 h-3 md:w-8 md:h-4 bg-black p-1 mx-2">
-              <div class="w-full h-full bg-green-500"></div>
+              <div
+                class="w-full h-full rnd-player"
+                v-bind:class="barColor(0, 1)"
+              ></div>
             </div>
             <div id="skew" class="w-6 h-3 md:w-8 md:h-4 bg-black p-1 mr-8">
-              <div class="w-full h-full bg-red-500"></div>
+              <div
+                class="w-full h-full rnd-player"
+                v-bind:class="barColor(1, 1)"
+              ></div>
             </div>
           </div>
           <div id="wave-m" class="flex items-center w-1/2 h-full">
             <div id="skew" class="w-6 h-3 md:w-8 md:h-4 bg-black p-1 ml-8">
-              <div class="w-full h-full bg-green-500"></div>
+              <div
+                class="w-full h-full rnd-enemy"
+                v-bind:class="barColor(0, 2)"
+              ></div>
             </div>
             <div id="skew" class="w-6 h-3 md:w-8 md:h-4 bg-black p-1 mx-2">
-              <div class="w-full h-full bg-red-500"></div>
+              <div
+                class="w-full h-full rnd-enemy"
+                v-bind:class="barColor(1, 2)"
+              ></div>
             </div>
           </div>
         </div>
@@ -100,7 +112,9 @@
 
               <!-- HP -->
 
-              <div class="flex flex-row-reverse md:flex-row items-center max-w-sm mx-auto py-1">
+              <div
+                class="flex flex-row-reverse md:flex-row items-center max-w-sm mx-auto py-1"
+              >
                 <img src="./svg/heart.svg" alt="" class="h-4 w-auto md:h-6" />
 
                 <div class="w-full h-4 md:h-6 p-1 mx-2 rounded-full bg-red-300">
@@ -113,7 +127,9 @@
 
               <!-- Shield -->
 
-              <div class="flex flex-row-reverse md:flex-row items-center max-w-sm mx-auto">
+              <div
+                class="flex flex-row-reverse md:flex-row items-center max-w-sm mx-auto"
+              >
                 <img src="./svg/shield.svg" alt="" class="h-4 w-auto md:h-6" />
 
                 <div
@@ -125,7 +141,9 @@
 
               <!-- Energy -->
 
-              <div class="flex flex-row-reverse md:flex-row items-center max-w-sm mx-auto py-1">
+              <div
+                class="flex flex-row-reverse md:flex-row items-center max-w-sm mx-auto py-1"
+              >
                 <img src="./svg/energy.svg" alt="" class="h-4 w-auto md:h-6" />
 
                 <div
@@ -136,13 +154,10 @@
               </div>
             </div>
 
-            <div class="w-full h-full p-4 flex flex-row-reverse md:justify-center">
-              <img
-                id="avatar"
-                class="w-1/2"
-                src="./images/hero.png"
-                alt=""
-              />
+            <div
+              class="w-full h-full p-4 flex flex-row-reverse md:justify-center"
+            >
+              <img id="avatar" class="w-1/2" src="./images/hero.png" alt="" />
             </div>
           </div>
 
@@ -197,11 +212,34 @@
           </div>
         </div>
 
-        <div id="buy" class="flex flex-wrap justify-center items-center w-full my-4">
-          <button @click="loadNextRound()" class="m-1 px-2 py-1 text-white rounded border border-white">Next Monster</button>
-          <button @click="rstGame" class="m-1 px-2 py-1 text-white rounded border border-white">Reset Game</button>
-          <button @click="playerAttack(user.attack)" class="m-1 px-2 py-1 text-white rounded border border-white">Attack</button>
-          <button @click="enemyAttack(enemy.attack)" class="m-1 px-2 py-1 text-white rounded border border-white">Enemy Attack</button> 
+        <div
+          id="buy"
+          class="flex flex-wrap justify-center items-center w-full my-4"
+        >
+          <button
+            @click="loadNextRound()"
+            class="m-1 px-2 py-1 text-white rounded border border-white"
+          >
+            Next Monster
+          </button>
+          <button
+            @click="rstGame"
+            class="m-1 px-2 py-1 text-white rounded border border-white"
+          >
+            Reset Game
+          </button>
+          <button
+            @click="playerAttack(user.attack)"
+            class="m-1 px-2 py-1 text-white rounded border border-white"
+          >
+            Attack
+          </button>
+          <button
+            @click="enemyAttack(enemy.attack)"
+            class="m-1 px-2 py-1 text-white rounded border border-white"
+          >
+            Enemy Attack
+          </button>
         </div>
       </div>
     </main>
