@@ -9,9 +9,11 @@
 body {
   background-image: url("./images/back.png");
   background-size: cover;
+  background-position: center center;
+  overflow-x: hidden;
 }
 
-#rounds {
+#rounds , #rounds span {
   -webkit-text-stroke: 3px black;
 }
 
@@ -29,6 +31,7 @@ body {
 
 #waves {
   height: 3vh;
+  transform: scaleX(-1);
 }
 
 #fighters {
@@ -42,10 +45,12 @@ body {
 
 #hero #avatar {
   animation: avatar 1.5s infinite ease;
+  animation: attack 2s ease;
 }
 
 #monster #avatar {
   animation: avatar 1.5s infinite 1s ease;
+  animation: hit 4s forwards 0.5s ease;
 }
 
 @keyframes avatar {
@@ -61,10 +66,57 @@ body {
   }
 }
 
+
+
+
+
+
+@keyframes attack {
+  0% {
+    transform: scaleX(1)  translateX(0) rotateZ(0);
+  }
+
+  50% {
+    transform: scaleX(1)  translateX(-3em) translateY(-5em) rotateZ(-20deg);
+  }
+
+  100% {
+    transform: scaleX(1)  translateX(0) rotateZ(0);
+  }
+}
+
+@keyframes hit {
+  0% {
+    transform: scaleX(1)  translateX(0) rotateZ(0);
+  }
+
+  80% {
+    transform: scaleX(1) translateX(-2em) rotateZ(-720deg);
+  }
+
+  100% {
+    transform: scaleX(1) translateX(0) rotateZ(-720deg);
+  }
+}
+
+
+
 @media screen and (min-width: 768px) {
   #hero,
   #monster {
     height: 100%;
+  }
+
+  #waves {
+    transform: scaleX(1);
+  }
+
+  #hero #avatar {
+    transform: scaleX(-1);
+  }
+
+  #monster #avatar {
+    transform: scaleX(-1);
   }
 
   @keyframes avatar {
@@ -77,6 +129,34 @@ body {
     }
     100% {
       transform: scaleX(-1) translateY(0);
+    }
+  }
+
+  @keyframes attack {
+    0% {
+      transform: scaleX(-1)  translateX(0) rotateZ(0);
+    }
+  
+    50% {
+      transform: scaleX(-1)  translateX(-25em) rotateZ(-20deg);
+    }
+  
+    100% {
+      transform: scaleX(-1)  translateX(0) rotateZ(0);
+    }
+  }
+
+  @keyframes hit {
+    0% {
+      transform: scaleX(-1)  translateX(0) rotateZ(0);
+    }
+  
+    80% {
+      transform: scaleX(-1) translateX(-15em) rotateZ(720deg);
+    }
+
+    100% {
+      transform: scaleX(-1) translateX(0) rotateZ(720deg);
     }
   }
 }
