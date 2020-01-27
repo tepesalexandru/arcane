@@ -3,7 +3,6 @@
   padding: 0;
   font-family: "Press Start 2P", cursive;
   letter-spacing: 1px;
-  -webkit-text-stroke: 1px black;
 }
 
 body {
@@ -13,8 +12,12 @@ body {
   overflow-x: hidden;
 }
 
-#buttons {
-  background-color: rgba(0,0,0,0.4);
+.main {
+  min-height: 95%;
+}
+
+#buttons button {
+  background-color: rgba(0,0,0,0.2);
 }
 
 #rounds , #rounds span {
@@ -39,7 +42,7 @@ body {
 }
 
 #fighters {
-  min-height: 40vh;
+  min-height: 0vh;
 }
 
 #hero,
